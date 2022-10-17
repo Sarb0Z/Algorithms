@@ -11,20 +11,29 @@
 # pseudocode
 # simple addition coded out
 
-# int val=0
-# int cur=0
-# while (l1&&l2)
-#     val+=cur
-#     cur=l1.val+l2.val
-#     val+=cur%10
-#     cur/=10
-#     l1=l1.next
-#     l2=l2.next
-# return val
-
     
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        lp=ListNode(0)
+        result=lp
+        excess=0
+        while l1 or l2 or excess:
+            if l1:
+                excess+=l1.val
+                l1=l1.next
+            if l2:
+                excess+=l2.val
+                l2=l2.next
+            result.next=ListNode(excess%10)
+            result=result.next
+            excess=excess//10
+        return lp.next
+
+
             
 
