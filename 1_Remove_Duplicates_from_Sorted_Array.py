@@ -33,7 +33,6 @@ class Solution:
                 cptr=cptr+1
                 if (cptr!=uptr):
                     nums[cptr]=nums[uptr]        
-        {1,2,3,3,3,4,4,5}
         return cptr
             
 
