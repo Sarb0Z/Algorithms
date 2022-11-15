@@ -16,16 +16,24 @@ Do not allocate extra space for another array. You must do this by modifying
 the input array in-place with O(1) extra memory.
 
 """
-
+# a pointer to keep track of current index
+# a pointer that goes ahead when next value is same
+# if values pointed are different
+# current index + 1 is value pointed by unique
+# increment current
+# repeat  
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        currentPtr=0
-        uniquePtr=0
-        while (currentPtr<len(nums)):
-            if nums[currentPtr]==nums[uniquePtr]:
-                currentPtr=currentPtr+1
-                uniquePtr=uniquePtr+1
+        cptr=0
+        uptr=0
+        while (uptr<len(nums)):
+            if (nums[cptr]==nums[uptr]):
+                uptr=uptr+1
             else:
-                currentPtr=currentPtr+1
+                cptr=cptr+1
+                if (cptr!=uptr):
+                    nums[cptr]=nums[uptr]        
+        {1,2,3,3,3,4,4,5}
+        return cptr
             
 
