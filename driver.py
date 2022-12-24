@@ -1,0 +1,1 @@
+#make a data table showing how long program took with input from file
