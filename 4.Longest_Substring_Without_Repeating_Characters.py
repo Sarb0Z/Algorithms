@@ -6,18 +6,11 @@ class Solution:
         index=0        
         for current in s:
             count=1
-            while (index+count<len(s)):
-                if s[index+count]==current:
-                    break
+            while ((index+count)<len(s)):
                 if count>largest:
                     largest=count
+                if s[index+count]==current:
+                    break
                 count=count+1
             index=index+1
         return largest
-
-        
-
-            
-
-
-        
