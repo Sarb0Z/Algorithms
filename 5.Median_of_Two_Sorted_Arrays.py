@@ -8,9 +8,9 @@
         s1=len(nums1)
         s2=len(nums2)
         arr_size=s1+s2
-        i=0
-        j=0
-        k=0
+        i:int=0
+        j:int=0 
+        k:int=0
         nums3: List[int]=list()
         while (i<s1 and j<s2):
             if (nums1[i]<nums2[j]):
@@ -26,17 +26,17 @@
             i+=1
             k+=1
 
-        while (j<s1):
-            nums3.append(nums1[j])
+        while (j<s2):
+            nums3.append(nums2[j])
             j+=1
             k+=1
-        while (i<s1):
-            nums3.append(nums1[i])
-            i+=1
-            k+=1
+
         if arr_size%2==0:
-            median_index=floor(arr_size/2)
-            return nums3[median_index-1]+nums3[median_index]
+            median_index:int=floor(arr_size/2)
+            return (nums3[median_index-1]+nums3[median_index])/2
         else:
-            median_index=floor(arr_size/2)
+            median_index:int=floor(arr_size/2)
             return nums3[median_index]
+
+
+
