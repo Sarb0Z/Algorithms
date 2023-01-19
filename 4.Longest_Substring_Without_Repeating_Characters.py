@@ -2,15 +2,19 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        largest=0
-        index=0        
-        for current in s:
-            count=1 #index for searching ahead in loop
-            while ((index+count)<len(s)):
-                if count>largest:
-                    largest=count
-                if s[index+count]==current:
-                    break
-                count=count+1
-            index=index+1 #index of current pointer
-        return largest
+         # Base Case
+        if len(s) == 1: return 1
+
+
+        count, s_result = 0, ''
+
+        for i in s:
+            if i not in s_result:
+                s_result += i
+            else:
+                s_result = s_result[s_result.index(i)+1:] + i
+
+            if len(s_result) > count:
+                count = len(s_result)
+        
+        return count
