@@ -1,6 +1,6 @@
-
-# Given a string s, return the longest palindromic substring in s.
 """Algorithm"""
+
+    # Given a string s, return the longest palindromic substring in s.
     # at each point of the string, we will simultaneously go forward and back
     # until we reach the end or beginning of string or the characters at both 
     # indexes are not the same
